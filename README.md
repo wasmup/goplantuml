@@ -33,11 +33,24 @@ This will install the command goplantuml in your `GOPATH` bin folder.
 
 ### Usage
 
-```
-goplantuml -recursive . > uml.puml
+```sh
 goplantuml -recursive path/to/gofiles/ path/to/gofiles2/
 goplantuml path/to/gofiles/ path/to/gofiles2/
+
+
+goplantuml -recursive . > uml.puml
+# code uml.puml
+
+# https://plantuml.com/
+# You need these things to run PlantUML: Java 8, and Graphviz
+# https://plantuml.com/graphviz-dot
+sudo apt install -y graphviz
+# convert to png:
+$JAVA_HOME/java -jar $GOBIN/plantuml.jar uml.puml
+# code uml.png
 ```
+
+
 ```
 Usage of goplantuml:
   -aggregate-private-members
