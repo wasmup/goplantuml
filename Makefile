@@ -3,10 +3,9 @@
 all:
 	go install -ldflags=-s ./...
 	which goplantuml
-	file $(which goplantuml)
 
 zip:	
-	7z a -mx9 ${GOTMPDIR}/linux-x86-64.7z $(which goplantuml)
+	7z a -mx9 ${GOTMPDIR}/linux-x86-64.7z $(GOBIN)/goplantuml
 
 gen:
 	goplantuml -show-connection-labels -show-aggregations -recursive -ignore="./testingsupport/" -title="Parser Class Diagram" ./parser > ClassDiagram.puml

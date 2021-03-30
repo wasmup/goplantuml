@@ -18,22 +18,25 @@ golang 1.10 or above
 
 ### Installing
 
-```
-go get github.com/jfeliu007/goplantuml/parser
-go get github.com/jfeliu007/goplantuml/cmd/goplantuml
-cd $GOPATH/src/github.com/jfeliu007/goplantuml
-go install ./...
+```sh
+git clone https://github.com/wasmup/goplantuml.git
+cd goplantuml
+make
+
+# go get github.com/jfeliu007/goplantuml/parser
+# go get github.com/jfeliu007/goplantuml/cmd/goplantuml
+# cd $GOPATH/src/github.com/jfeliu007/goplantuml
+# go install ./...
 ```
 
-This will install the command goplantuml in your GOPATH bin folder.
+This will install the command goplantuml in your `GOPATH` bin folder.
 
 ### Usage
 
 ```
-goplantuml [-recursive] path/to/gofiles path/to/gofiles2
-```
-```
-goplantuml [-recursive] path/to/gofiles path/to/gofiles2 > diagram_file_name.puml
+goplantuml -recursive . > uml.puml
+goplantuml -recursive path/to/gofiles/ path/to/gofiles2/
+goplantuml path/to/gofiles/ path/to/gofiles2/
 ```
 ```
 Usage of goplantuml:
